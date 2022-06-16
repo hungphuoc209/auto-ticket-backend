@@ -1,7 +1,6 @@
 from flask import Flask
 from flask_cors import CORS, cross_origin
 from flask import request
-from main import result
 
 # Khởi tạo Flask Server Backend
 app = Flask(__name__)
@@ -34,11 +33,10 @@ def minus_process():
     return 'Kết quả là: ' + str(kq)
 
 
-@app.route('/multi', methods=['POST', 'GET'])
+@app.route('/multi')
 @cross_origin(origin='*')
 def multi_process():
-    return result()
-
+    return "Hehe"
 
 @app.route('/div', methods=['POST', 'GET'])
 @cross_origin(origin='*')
